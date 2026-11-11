@@ -1,0 +1,178 @@
+/* neXsv — correcciones de ancho y responsive para espacios privados */
+html,body{max-width:100%;overflow-x:hidden}
+.dashboard,.business-dashboard{width:calc(100% - 32px);max-width:1200px;min-width:0;margin-left:auto;margin-right:auto}
+.dashboard{grid-template-columns:240px minmax(0,1fr);gap:22px;padding:0;margin-top:28px}
+.dashboard-content,.business-content{min-width:0;width:100%;max-width:100%}
+.dashboard-content>*,.business-content>*{min-width:0;max-width:100%}
+.member-home .card,.member-home .dashboard-header,.member-home .profile-progress,.member-home .stats-grid{min-width:0;max-width:100%}
+.member-home .stats-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.business-dashboard{grid-template-columns:230px minmax(0,1fr);gap:22px;padding:0;margin-top:28px}
+.business-dashboard .business-sidebar{min-width:0}.business-dashboard .business-menu{min-width:0}.business-dashboard .business-content{min-width:0}
+.business-dashboard .business-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.business-dashboard .business-section,.business-dashboard .business-welcome{min-width:0;max-width:100%}
+.business-dashboard .business-item-card,.business-dashboard .business-community-card{min-width:0;max-width:100%;overflow:hidden}
+.business-dashboard .business-item-info{min-width:0}
+.business-dashboard .business-item-heading{min-width:0}
+@media(max-width:1000px){
+  .dashboard,.business-dashboard{width:calc(100% - 32px);grid-template-columns:1fr;padding:0;margin-top:22px}
+  .dashboard-sidebar,.business-sidebar{position:relative;top:auto;min-width:0}
+  .member-home .stats-grid,.business-dashboard .business-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .dashboard,.business-dashboard{width:calc(100% - 24px);margin-top:16px}
+  .member-home .stats-grid,.business-dashboard .business-summary-grid{grid-template-columns:1fr}
+  .business-topbar,.dashboard-topbar{padding-left:16px;padding-right:16px}
+  .business-dashboard .business-menu{overflow-x:auto;max-width:100%}
+  .business-dashboard .business-menu a{flex:0 0 auto}
+}
+
+/* Refuerzo móvil — evitar compresión y desbordamientos en Mi espacio */
+@media(max-width:700px){
+  .dashboard-topbar{
+    height:auto;
+    min-height:64px;
+    margin-bottom:18px;
+    padding:10px 12px;
+    gap:10px;
+  }
+  .dashboard-logo img{height:36px}
+  .dashboard-user{gap:8px;min-width:0}
+  .dashboard-user .dashboard-icon-link,
+  .dashboard-user .notification-btn{
+    width:36px;height:36px;flex:0 0 36px;
+  }
+  .dashboard-user .user-info{display:none}
+  .dashboard-user .user-avatar{width:38px;height:38px;flex:0 0 38px}
+  .dashboard-notification-popover{
+    right:12px!important;
+    left:12px;
+    width:auto!important;
+    max-width:none;
+  }
+
+  .dashboard-sidebar{
+    width:100%;
+  }
+  .profile-card{
+    padding:20px 16px;
+  }
+  .dashboard-menu{
+    padding:10px;
+    border-radius:18px;
+  }
+  .dashboard-menu a,
+  .dashboard-menu .menu-more-toggle{
+    min-height:44px;
+    padding:11px 13px;
+    font-size:.9rem;
+  }
+  .sidebar-footer{display:none}
+
+  .dashboard-content{gap:16px}
+  .dashboard-header{
+    padding:22px 18px;
+    margin-bottom:0;
+  }
+  .dashboard-header h1{font-size:1.55rem;line-height:1.2}
+  .dashboard-header p{font-size:.86rem;line-height:1.6}
+  .card{
+    padding:20px 16px;
+    border-radius:18px;
+  }
+  .section-title{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:8px;
+  }
+  .section-title h2{font-size:1.15rem}
+  .section-title p{font-size:.8rem}
+  .profile-progress .progress-header{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:10px;
+  }
+  .profile-progress .progress-row{width:100%}
+  .space-action{
+    min-width:0;
+    padding:14px;
+  }
+  .space-action-copy{min-width:0}
+  .space-action-copy strong,
+  .space-action-copy span{
+    overflow-wrap:anywhere;
+  }
+  .dashboard-inline-composer{
+    min-width:0;
+  }
+  .dashboard-inline-composer input,
+  .dashboard-inline-composer textarea,
+  .dashboard-inline-composer select{
+    max-width:100%;
+  }
+  .dashboard-photo-tools{
+    flex-wrap:wrap;
+  }
+  .dashboard-publication-slider-wrap{
+    min-width:0;
+  }
+  .dashboard-publication-slider{
+    min-width:0;
+  }
+}
+
+/* SPRINT 2.1 — Mi espacio realmente responsive en teléfonos */
+@media(max-width:700px){
+  html,body{overflow-x:hidden}
+  .member-home .dashboard-content{gap:16px}
+  .member-home .card,
+  .member-home .dashboard-header,
+  .member-home .profile-progress,
+  .member-home .business-invite-banner,
+  .member-home .space-actions{width:100%;box-sizing:border-box}
+
+  .member-home .section-title{width:100%;min-width:0}
+  .member-home .section-title>div{min-width:0;width:100%}
+  .member-home .section-title h2,
+  .member-home .section-title p{overflow-wrap:anywhere}
+
+  /* Accesos principales */
+  .member-home .space-actions{grid-template-columns:1fr;gap:10px}
+  .member-home .space-action{width:100%;box-sizing:border-box;min-height:78px;padding:14px}
+  .member-home .space-action-copy{min-width:0}
+  .member-home .space-action-copy strong,
+  .member-home .space-action-copy span{overflow-wrap:anywhere}
+
+  /* Composer */
+  .member-home .community-types{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px;scrollbar-width:none}
+  .member-home .community-types::-webkit-scrollbar{display:none}
+  .member-home .community-type{flex:0 0 auto}
+  .member-home .dashboard-business-publish-row{display:flex;flex-direction:column;align-items:stretch;gap:6px}
+  .member-home .dashboard-business-publish-row select{width:100%;max-width:100%;box-sizing:border-box}
+  .member-home .dashboard-photo-tools{align-items:flex-start}
+  .member-home .dashboard-photo-tools .dashboard-photo-btn{max-width:100%}
+  .member-home .dashboard-composer-footer{width:100%}
+  .member-home .dashboard-composer-footer #dashboardPublishBtn{width:100%}
+
+  /* Negocios recomendados: una tarjeta completa por desplazamiento */
+  .member-home .recommended-business-list{width:100%;max-width:100%;padding-bottom:4px}
+  .member-home .recommended-business-card{min-width:calc(100% - 8px);max-width:calc(100% - 8px);box-sizing:border-box}
+
+  /* Mis publicaciones: una tarjeta completa, nunca tres comprimidas */
+  .member-home .dashboard-publication-slider-wrap{width:100%;max-width:100%;box-sizing:border-box}
+  .member-home .dashboard-publication-slider{width:100%;max-width:100%;overflow:hidden}
+  .member-home .dashboard-publication-card{min-width:100%!important;width:100%;max-width:100%;flex:0 0 100%!important;box-sizing:border-box}
+  .member-home .dashboard-publication-card img,
+  .member-home .dashboard-publication-card .dashboard-publication-placeholder{height:190px}
+  .member-home .dashboard-publication-copy{min-width:0;padding:15px}
+  .member-home .dashboard-publication-copy p,
+  .member-home .dashboard-publication-copy strong{overflow-wrap:anywhere}
+
+  /* Reseñas y guardados */
+  .member-home .dashboard-review-slider{width:100%;min-width:0}
+  .member-home #mis-resenas .feed-placeholder,
+  .member-home #guardados .feed-placeholder{box-sizing:border-box;width:100%;overflow-wrap:anywhere}
+
+  /* Menú lateral apilado */
+  .member-home .dashboard-sidebar{width:100%;max-width:100%;overflow:hidden}
+  .member-home .dashboard-menu{width:100%;box-sizing:border-box}
+}

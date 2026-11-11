@@ -1,0 +1,50 @@
+[hidden]{display:none !important}
+:root{--invite-blue:#3155B6;--invite-cyan:#67C2D2;--invite-yellow:#F5C542;--invite-text:#1D2A3A;--invite-muted:#667085}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Montserrat',Arial,sans-serif;background:#fff;color:var(--invite-text);min-height:100vh}
+.business-invitation-page{width:100%;max-width:1200px;margin:0 auto;padding:60px 25px}
+.business-invitation-card{width:100%;background:#fff;padding:0}
+.invitation-topbar{display:flex;align-items:flex-start;justify-content:space-between}
+.business-invitation-logo{display:inline-block;margin:0 0 35px}
+.business-invitation-logo img{width:180px;height:auto;display:block}
+.invitation-back-link{color:var(--invite-blue);text-decoration:none;font-size:14px;font-weight:600;padding-top:10px}
+.invitation-back-link i{margin-right:5px}
+.invitation-kicker{display:inline-flex;gap:8px;align-items:center;padding:10px 24px;border-radius:40px;background:#EEF6FB;color:var(--invite-blue);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+h1{font-size:3.2rem;line-height:1.15;font-weight:800;color:var(--invite-blue);margin:22px 0 18px;text-align:center;letter-spacing:-1px}
+h1 strong{color:inherit}
+.invitation-intro{max-width:760px;margin:0 auto 22px;font-size:1.15rem;line-height:1.7;color:var(--invite-muted);text-align:center}
+.invitation-access-badge{display:inline-block;padding:10px 24px;border-radius:40px;background:#EEF6FB;color:var(--invite-blue);font-weight:600;font-size:.9rem;margin-bottom:45px}
+#invitationContent{text-align:center}
+.invited-business{width:100%;display:grid;grid-template-columns:210px 1fr;gap:35px;align-items:center;padding:32px 38px;border:1px solid #EEF2F7;border-radius:24px;background:#fff;margin:0 auto 45px;box-shadow:0 15px 35px rgba(0,0,0,.05);text-align:left}
+.invited-business-logo{width:190px;height:190px;margin:auto;border-radius:24px;background:#fff;display:grid;place-items:center;overflow:hidden;color:var(--invite-blue);font-size:38px;border:1px solid #EEF2F7}
+.invited-business-logo img{width:100%;height:100%;object-fit:contain;padding:18px}
+.invited-business h2{margin:0 0 8px;color:var(--invite-blue);font-size:2rem}
+.invited-business span{font-size:15px;color:#19C2C6;font-weight:800}
+.invited-business p{margin:12px 0 0;font-size:15px;line-height:1.7;color:var(--invite-muted);max-width:700px}
+.invitation-actions{width:100%;display:grid;grid-template-columns:repeat(2,1fr);gap:35px;margin-bottom:45px}
+.invitation-action-card{display:block;background:#fff;border:1px solid #EEF2F7;border-radius:24px;padding:45px;text-decoration:none;transition:.35s;box-shadow:0 15px 35px rgba(0,0,0,.05);text-align:center;color:inherit}
+.invitation-action-card:hover{transform:translateY(-8px);box-shadow:0 25px 45px rgba(0,0,0,.08)}
+.invitation-action-icon{width:95px;height:95px;margin:0 auto 25px;border-radius:50%;background:linear-gradient(135deg,#3155B6,#67C2D2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:38px}
+.invitation-action-card h2{color:var(--invite-blue);font-size:2rem;margin:0 0 18px}
+.invitation-action-card p{color:var(--invite-muted);line-height:1.7;margin:0 0 35px;min-height:55px}
+.invitation-action-button{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--invite-yellow);color:var(--invite-blue);padding:16px;border-radius:14px;font-weight:700;transition:.3s}
+.invitation-action-card:hover .invitation-action-button{background:#F0B90B;color:var(--invite-blue)}
+.invitation-primary,.invitation-secondary{min-height:50px;border-radius:14px;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;font-weight:700;font-size:14px;cursor:pointer}
+.invitation-primary{border:0;background:var(--invite-yellow);color:var(--invite-blue);width:100%;max-width:520px;margin:0 auto}
+.invitation-secondary{background:#fff;color:var(--invite-blue);border:1px solid #d6deea}
+.invitation-actions-single{grid-template-columns:1fr}
+.invitation-actions-single .invitation-primary:hover{background:#F0B90B}
+.invitation-message{min-height:20px;text-align:center;font-size:13px;color:#b45309;margin:14px 0}
+.invitation-note{margin:0 auto 45px;padding:16px 20px;border-radius:14px;background:#F5F8FC;color:#49638A;font-size:12px;line-height:1.6;text-align:center;max-width:740px}
+.invitation-state{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;color:#667085;padding:30px 0}
+.invitation-state i{font-size:28px;color:var(--invite-blue)}
+.invitation-error strong{color:#26344a}
+.invitation-error .invitation-secondary{margin-top:8px;padding-inline:24px}
+.invitation-footer{border-top:1px solid #E5E7EB;margin-top:20px;padding:34px 20px 4px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+.invitation-footer img{width:112px;height:auto}
+.invitation-footer strong{font-size:12px;color:#49638a;font-weight:600}
+.invitation-footer span{font-size:13px;color:#8390a5}
+.business-invite-banner{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;margin:0 0 24px;padding:20px 22px;background:linear-gradient(135deg,#f2f7fc,#eef9f6);border:1px solid rgba(42,75,124,.12);border-radius:22px;box-shadow:0 10px 30px rgba(42,75,124,.07)}
+.business-invite-banner-logo{width:64px;height:64px;border-radius:16px;background:#fff;display:grid;place-items:center;overflow:hidden;color:var(--invite-blue);font-size:24px;border:1px solid #e4eaf2}.business-invite-banner-logo img{width:100%;height:100%;object-fit:contain;padding:7px}.business-invite-banner-copy span{display:block;color:#19C2C6;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}.business-invite-banner-copy strong{display:block;color:var(--invite-blue);font-size:18px;margin-bottom:5px}.business-invite-banner-copy p{margin:0;color:#667085;font-size:13px;line-height:1.45}.business-invite-banner-action{white-space:nowrap;text-decoration:none;background:var(--invite-blue);color:#fff;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:700}
+@media(max-width:900px){.invitation-actions{grid-template-columns:1fr}.invited-business{grid-template-columns:1fr;text-align:center}.invited-business-logo{width:160px;height:160px}.invited-business p{margin-left:auto;margin-right:auto}h1{font-size:2.4rem}.business-invitation-logo{width:150px}.business-invitation-logo img{width:150px}.business-invite-banner{grid-template-columns:52px 1fr}.business-invite-banner-action{grid-column:1/-1;text-align:center}}
+@media(max-width:600px){.business-invitation-page{padding:40px 18px}.business-invitation-logo img{width:150px}.business-invitation-logo{margin-bottom:30px}.invitation-back-link{font-size:12px}.invited-business{padding:28px 22px}.invitation-action-card{padding:35px 25px}.invitation-action-icon{width:80px;height:80px;font-size:30px}.invitation-action-card h2{font-size:1.6rem}.invitation-action-button{font-size:.95rem}}

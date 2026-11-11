@@ -1,0 +1,239 @@
+.back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #1657B8;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+.revision-intro { margin-bottom: 28px; }
+.revision-intro h1 { margin: 12px 0 6px; }
+.revision-intro p { margin: 0; }
+
+.revision-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.revision-card {
+    background: #fff;
+    border: 1px solid #e3e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(29, 42, 58, 0.06);
+}
+
+.revision-card h2 {
+    margin: 0 0 22px;
+    color: #1D2A3A;
+    font-size: 1.25rem;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.detail-grid > div { min-width: 0; }
+
+.detail-grid span {
+    display: block;
+    margin-bottom: 6px;
+    color: #6b7b90;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.detail-grid strong {
+    display: block;
+    color: #1D2A3A;
+    font-weight: 500;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.logo-review {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px dashed #d5dce7;
+    border-radius: 16px;
+    background: #f8fafc;
+}
+
+.business-logo {
+    max-width: 220px;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo-empty {
+    color: #6b7b90;
+    font-weight: 600;
+}
+
+.revision-actions,
+.correction-panel {
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #e3e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(29, 42, 58, 0.06);
+}
+
+.revision-actions h2,
+.correction-panel h2 {
+    margin: 0 0 8px;
+    color: #1D2A3A;
+}
+
+.revision-actions p { color: #66758a; margin: 0; }
+
+.action-buttons,
+.correction-actions,
+.payment-action {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.admin-btn.warning,
+.admin-btn.success {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.admin-btn.warning { background: #d97706; }
+.admin-btn.success { background: #16835b; }
+.admin-btn.warning:hover { background: #b45309; }
+.admin-btn.success:hover { background: #116b4a; }
+
+.admin-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.correction-panel label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1D2A3A;
+}
+
+.correction-panel textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    border: 1px solid #d5dce7;
+    border-radius: 12px;
+    padding: 14px;
+    font: inherit;
+    color: #1D2A3A;
+}
+
+.correction-panel textarea:focus {
+    outline: 2px solid rgba(22, 87, 184, .15);
+    border-color: #1657B8;
+}
+
+.payment-card {
+    border-top: 4px solid #F5B041;
+}
+
+.payment-card .payment-action p {
+    flex: 1 1 100%;
+    margin: 0;
+    color: #66758a;
+}
+
+.payment-active {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #e3e8f0;
+}
+
+.payment-success {
+    margin: 0 0 18px;
+    color: #16835b;
+    font-weight: 700;
+}
+
+.manual-payment-wrapper {
+    margin-top: 4px;
+}
+
+.payment-intro {
+    margin: 0 0 22px;
+    color: #66758a;
+    line-height: 1.6;
+}
+
+.manual-payment-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1D2A3A;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.manual-payment-form input,
+.manual-payment-form select,
+.manual-payment-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d5dce7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    background: #fff;
+    color: #1D2A3A;
+    font: inherit;
+}
+
+.manual-payment-form textarea {
+    resize: vertical;
+}
+
+.manual-payment-form input:focus,
+.manual-payment-form select:focus,
+.manual-payment-form textarea:focus {
+    outline: 2px solid rgba(22, 87, 184, .15);
+    border-color: #1657B8;
+}
+
+.payment-field-full {
+    grid-column: 1 / -1;
+}
+
+.payment-form-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 22px;
+}
+
+/* Asegurar que los estados controlados por JavaScript respeten [hidden]. */
+#paymentSection[hidden],
+#manualPaymentFormWrapper[hidden],
+#paymentDetails[hidden],
+#paymentAction[hidden],
+#paymentActive[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    .detail-grid { grid-template-columns: 1fr; }
+    .revision-card,
+    .revision-actions,
+    .correction-panel { padding: 22px; }
+    .payment-field-full { grid-column: auto; }
+}

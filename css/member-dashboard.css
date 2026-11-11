@@ -1,0 +1,1046 @@
+/* ==========================================
+   Dashboard de Miembro | neXsv
+========================================== */
+
+body{
+    margin:0;
+    background:#F5F7FB;
+    font-family:'Montserrat',sans-serif;
+}
+
+/* ===== Layout ===== */
+
+.dashboard{
+
+    max-width:1400px;
+    margin:40px auto;
+
+    padding:0 25px;
+
+    display:grid;
+
+    grid-template-columns:300px 1fr;
+
+    gap:32px;
+
+    align-items:start;
+
+}
+
+/* ===== Sidebar ===== */
+
+.dashboard-sidebar{
+
+    position:sticky;
+    top:30px;
+
+}
+
+.profile-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:32px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+}
+
+.profile-avatar{
+
+    width:95px;
+    height:95px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#FFD54A;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:38px;
+
+    color:#1657B8;
+
+    margin-bottom:18px;
+
+}
+
+.profile-card h2{
+
+    margin:0;
+
+    font-size:1.25rem;
+
+}
+
+.profile-card p{
+
+    color:#6B7280;
+
+    margin-top:8px;
+
+}
+
+/* ===== Menú ===== */
+
+.dashboard-menu{
+
+    margin-top:24px;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:16px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+}
+
+.dashboard-menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 18px;
+
+    color:#475569;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    margin-bottom:8px;
+
+    transition:.25s;
+
+}
+
+.dashboard-menu a:hover{
+
+    background:#F5F7FB;
+
+}
+
+.dashboard-menu a.active{
+
+    background:#FFD54A;
+
+    color:#1657B8;
+
+    font-weight:700;
+
+}
+
+/* ===== Contenido ===== */
+
+.dashboard-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.dashboard-header{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+}
+
+.dashboard-header h1{
+
+    margin:0;
+
+    font-size:2rem;
+
+}
+
+.dashboard-header p{
+
+    margin-top:10px;
+
+    color:#64748B;
+
+}
+
+/* ===== Tarjetas ===== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+.stat-card{
+
+    text-align:center;
+
+}
+
+.stat-card h3{
+
+    font-size:.95rem;
+
+    color:#64748B;
+
+}
+
+.stat-card strong{
+
+    display:block;
+
+    margin-top:14px;
+
+    font-size:2rem;
+
+    color:#1657B8;
+
+}
+
+/* ===== Cards ===== */
+
+.card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+}
+
+/* ===== Responsive ===== */
+
+@media(max-width:1000px){
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard-sidebar{
+
+position:relative;
+
+top:auto;
+
+}
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ==========================================
+   Topbar privada
+========================================== */
+
+.dashboard-topbar{
+
+    height:78px;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 40px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
+
+    margin-bottom:35px;
+
+}
+
+.dashboard-logo img{
+
+    height:42px;
+
+}
+
+.dashboard-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.notification-btn{
+
+    width:46px;
+    height:46px;
+
+    border:none;
+
+    background:#F5F7FB;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:#3D5BA9;
+
+    transition:.25s;
+
+}
+
+.notification-btn:hover{
+
+    background:#FFD54A;
+
+}
+
+.user-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:right;
+
+}
+
+.user-name{
+
+    font-weight:700;
+
+    color:#233A72;
+
+}
+
+.user-info small{
+
+    color:#7B8794;
+
+}
+
+.user-avatar{
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#FFD54A;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#233A72;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+/* ==========================================
+   Perfil
+========================================== */
+
+.member-since{
+
+    color:#64748B;
+
+    margin-top:8px;
+
+    font-size:.92rem;
+
+}
+
+.member-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:18px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#EAF8EC;
+
+    color:#2E7D32;
+
+    font-size:.90rem;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   Footer Sidebar
+========================================== */
+
+.sidebar-footer{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+}
+
+.sidebar-footer img{
+
+    width:140px;
+
+    margin-bottom:18px;
+
+}
+
+.sidebar-footer p{
+
+    font-size:.88rem;
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+   Bienvenida
+========================================== */
+
+.dashboard-header{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    margin-bottom:28px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.05);
+
+}
+
+.welcome-tag{
+
+    display:inline-block;
+
+    background:linear-gradient(135deg,#18C37E,#2F80ED);
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    margin-bottom:16px;
+
+}
+
+.dashboard-header h1{
+
+    font-size:2rem;
+
+    color:#233A72;
+
+    margin-bottom:14px;
+
+}
+
+.dashboard-header p{
+
+    max-width:700px;
+
+    line-height:1.8;
+
+    color:#64748B;
+
+}
+
+/* ==========================================
+   Negocios favoritos
+========================================== */
+
+.section-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.section-title a{
+
+    color:#3D5BA9;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+}
+
+.favorite-business-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:22px;
+
+}
+
+.favorite-business-card{
+
+    background:#fff;
+
+    border:1px solid #ECECEC;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.25s;
+
+}
+
+.favorite-business-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.favorite-business-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.business-category{
+
+    background:#FFF4CF;
+
+    color:#C58B00;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    font-size:.80rem;
+
+    font-weight:700;
+
+}
+
+.verified-badge{
+
+    color:#2E7D32;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+}
+
+.favorite-business-card h3{
+
+    margin-bottom:10px;
+
+    color:#233A72;
+
+}
+
+.favorite-business-card p{
+
+    color:#64748B;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+}
+
+.member-email{
+
+    margin-top:18px;
+
+    color:#64748B;
+
+    font-size:.90rem;
+
+    word-break:break-word;
+
+}
+
+/*=========================================
+Perfil Progress
+=========================================*/
+
+.profile-progress{
+
+    margin-bottom:30px;
+
+}
+
+.profile-checklist{
+
+    list-style:none;
+
+    margin:25px 0 35px;
+
+    padding:0;
+
+}
+
+.profile-checklist li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:14px;
+
+    color:#4B5563;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:10px;
+
+    background:#ECECEC;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    margin-top:15px;
+
+}
+
+.progress-fill{
+
+    width:25%;
+
+    height:100%;
+
+    background:#FFD54A;
+
+    transition:.4s;
+
+}
+
+#progressText{
+
+    display:block;
+
+    margin-top:12px;
+
+    color:#64748B;
+
+    font-size:.90rem;
+
+}
+
+/*=========================================
+Foto de Perfil
+=========================================*/
+
+.profile-photo-section{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    margin-bottom:35px;
+
+}
+
+.profile-photo{
+
+    width:160px;
+    height:160px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:#EEF2FF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:4px solid #E4E8F5;
+
+}
+
+.profile-photo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.profile-initials{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:#4F46E5;
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    border:1px solid #D7DCE8;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.secondary-btn:hover{
+
+    background:#F5F7FB;
+
+}
+
+/*=========================================
+Avatar Usuario
+=========================================*/
+
+.user-avatar,
+.profile-avatar{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.user-avatar img,
+.profile-avatar img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+.user-avatar span,
+.profile-avatar span{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+    height:100%;
+
+    font-weight:700;
+
+    color:#4F46E5;
+
+}
+
+/* Borde degradado */
+
+.profile-avatar{
+
+    padding:4px;
+
+    background:linear-gradient(
+        135deg,
+        #18C37E,
+        #2F80ED
+    );
+
+}
+
+/*=========================================
+  Avatar con fotografía
+=========================================*/
+
+.user-avatar,
+.profile-avatar{
+
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.user-avatar img,
+.profile-avatar img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+
+}
+
+.user-avatar span,
+.profile-avatar span{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+    font-size:1rem;
+
+    color:#233A72;
+    background:#FFD54A;
+
+}
+
+/*=========================================
+  Botón Completar Perfil
+=========================================*/
+
+.primary-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 30px;
+
+    border:none;
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#18C37E,#2F80ED);
+
+    color:#FFFFFF;
+
+    font-weight:700;
+    font-size:.95rem;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+    box-shadow:0 10px 25px rgba(47,128,237,.20);
+
+    margin-top:24px;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 16px 35px rgba(47,128,237,.28);
+
+}
+
+/*=========================================
+  Formulario de Perfil
+=========================================*/
+
+.profile-form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+
+    margin-top:40px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-size:.90rem;
+
+    font-weight:600;
+
+    color:#233A72;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid #DCE3EF;
+
+    border-radius:12px;
+
+    background:#FFFFFF;
+
+    font-size:.95rem;
+
+    color:#233A72;
+
+    transition:.25s;
+
+}
+
+.form-group input:focus{
+
+    outline:none;
+
+    border-color:#2F80ED;
+
+    box-shadow:0 0 0 4px rgba(47,128,237,.12);
+
+}
+
+.form-group input:disabled{
+
+    background:#F7F8FA;
+
+    color:#94A3B8;
+
+}
+
+@media(max-width:768px){
+
+    .profile-form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/*=========================================
+Información Perfil
+=========================================*/
+
+.profile-info{
+
+    margin:28px 0 34px;
+
+}
+
+.profile-info p{
+
+    margin:0;
+
+    color:#64748B;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+}
+
+
+/* ==========================================================
+   SPRINT 5.5 — Auditoría responsive | Perfil
+========================================================== */
+@media(max-width:700px){
+  .profile-card{text-align:center}
+  .profile-card h2{font-size:1.15rem}
+  .profile-photo-section{margin-bottom:26px}
+  .profile-photo{width:132px;height:132px}
+  .profile-initials{font-size:42px}
+  .profile-form-grid{grid-template-columns:1fr}
+  .profile-form-grid .form-group{min-width:0}
+  .form-group input,
+  .form-group select{min-height:48px;font-size:16px}
+  .profile-progress{padding:20px 16px}
+  .profile-progress .progress-header{gap:10px}
+  .primary-btn,.secondary-btn{width:100%;min-height:48px}
+}
+@media(max-width:380px){
+  .profile-photo{width:116px;height:116px}
+  .profile-card{padding:18px 14px}
+}

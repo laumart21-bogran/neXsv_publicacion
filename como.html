@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>¿Cómo funciona neXsv? | Comunidad y oportunidades</title>
+<meta name="description" content="Descubre cómo funciona neXsv, una red privada que conecta familias y negocios mediante confianza, comunidad, recomendaciones y nuevas oportunidades.">
+<link rel="canonical" href="https://nexsv.com/como.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="neXsv">
+<meta property="og:title" content="¿Cómo funciona neXsv? | Comunidad y oportunidades">
+<meta property="og:description" content="Conoce cómo neXsv conecta familias y negocios mediante confianza, comunidad, recomendaciones y nuevas oportunidades.">
+<meta property="og:url" content="https://nexsv.com/como.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="¿Cómo funciona neXsv? | Comunidad y oportunidades">
+<meta name="twitter:description" content="Conoce cómo neXsv conecta familias y negocios mediante confianza, comunidad, recomendaciones y nuevas oportunidades.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="components/layout.css">
+
+<style>
+
+/* =========================
+BASE
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--primary:#1657B8;
+--secondary:#19C2C6;
+--accent:#F7C531;
+--bg:#F5F7FB;
+--text:#1D2A3A;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+linear-gradient(
+rgba(9,28,61,.78),
+rgba(9,28,61,.82)
+),
+url('cover-como.jpg') center/cover;
+
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+
+width:420px;
+height:420px;
+
+background:rgba(25,194,198,.15);
+
+filter:blur(120px);
+
+border-radius:50%;
+
+top:-120px;
+right:-100px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+
+width:280px;
+height:280px;
+
+background:rgba(247,197,49,.12);
+
+filter:blur(100px);
+
+border-radius:50%;
+
+bottom:-80px;
+left:-60px;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:clamp(2.2rem,5vw,3.5rem);
+color:white;
+margin-bottom:15px;
+font-weight:800;
+line-height:1.1;
+}
+
+.hero p{
+color:rgba(255,255,255,.88);
+font-size:18px;
+line-height:1.8;
+max-width:700px;
+margin:auto;
+}
+
+/* =========================
+CONTAINER
+========================= */
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+/* =========================
+TITLE
+========================= */
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:clamp(2rem,4vw,3rem);
+color:#1657B8;
+margin-bottom:10px;
+font-weight:800;
+}
+
+.section-title p{
+color:#667085;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+}
+
+/* =========================
+PASOS
+========================= */
+
+.steps{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.step{
+display:flex;
+gap:20px;
+align-items:flex-start;
+background:white;
+padding:28px;
+border-radius:22px;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.step:hover{
+transform:translateY(-5px);
+}
+
+.step-number{
+width:42px;
+height:42px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#19C2C6;
+color:white;
+font-weight:800;
+flex-shrink:0;
+}
+
+.step h3{
+color:#1657B8;
+margin-bottom:8px;
+font-size:22px;
+font-weight:800;
+}
+
+.step p{
+color:#5d6677;
+line-height:1.8;
+}
+
+/* =========================
+CTA
+========================= */
+
+.cta{
+text-align:center;
+}
+
+.cta-box{
+
+background:
+linear-gradient(
+135deg,
+#1657B8,
+#19C2C6
+);
+
+padding:60px 25px;
+
+border-radius:30px;
+
+color:white;
+
+box-shadow:
+0 20px 50px rgba(22,87,184,.18);
+}
+
+.cta h2{
+font-size:clamp(1.8rem,3.5vw,2.8rem);
+margin-bottom:12px;
+font-weight:800;
+}
+
+.cta p{
+opacity:.92;
+margin-bottom:25px;
+line-height:1.8;
+}
+
+.cta a{
+display:inline-block;
+background:#F7C531;
+padding:14px 24px;
+border-radius:14px;
+color:#1D2A3A;
+font-weight:800;
+text-decoration:none;
+transition:.3s;
+}
+
+.cta a:hover{
+transform:translateY(-3px);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.step{
+flex-direction:column;
+text-align:center;
+align-items:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.cta-box{
+padding:45px 22px;
+}
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+text-align:center;
+padding:40px 20px;
+background:white;
+margin-top:60px;
+color:#6b7280;
+font-size:14px;
+}
+
+footer a{
+color:#1657B8;
+text-decoration:none;
+font-weight:700;
+}
+
+
+/* ==========================================================
+   SPRINT 5.5 — Auditoría responsive | Cómo funciona
+========================================================== */
+@media(max-width:600px){
+  .hero{min-height:52vh;padding:72px 16px 42px}
+  .hero h1{font-size:30px;line-height:1.12}
+  .hero p{font-size:15px;line-height:1.65}
+  .container{width:100%;padding:0 14px}
+  .section-title{margin-bottom:30px}
+  .section-title h2{font-size:26px;line-height:1.2}
+  .section-title p{font-size:14px;line-height:1.65}
+  .step{width:100%;padding:22px 18px;border-radius:18px}
+  .step h3{font-size:19px}
+  .step p{font-size:14px;line-height:1.65}
+  .cta{padding:64px 14px}
+  .cta-box{padding:36px 18px;border-radius:22px}
+  .cta h2{font-size:27px;line-height:1.2}
+  .cta p{font-size:14px}
+  .cta a{width:100%;min-height:50px;padding:14px 18px}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER GLOBAL -->
+
+<script src="components/header.js"></script>
+
+<!-- HERO -->
+
+<section class="hero nex-hero">
+
+<div class="hero-content nex-hero-content">
+
+<h1>
+¿Cómo funciona neXsv?
+</h1>
+
+<p>
+Conectamos negocios con clientes reales dentro de su comunidad.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTENIDO -->
+
+<section class="nex-section">
+
+<div class="container nex-container">
+
+<div class="section-title">
+
+<h2>
+Obtén clientes en 4 pasos
+</h2>
+
+<p>
+Así es como transformamos visibilidad en ventas reales dentro de la red.
+</p>
+
+</div>
+
+<!-- PASOS -->
+
+<div class="steps">
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<div>
+
+<h3>
+Te registras en la comunidad
+</h3>
+
+<p>
+Accedes a una red privada de personas, negocios y oportunidades dentro de tu comunidad.
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">
+2
+</div>
+
+<div>
+
+<h3>
+Publicas tu negocio
+</h3>
+
+<p>
+Tu perfil se convierte en una vitrina digital dentro de la comunidad.
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<div>
+
+<h3>
+Recibes contactos directos
+</h3>
+
+<p>
+Los clientes te escriben directamente por WhatsApp sin intermediarios.
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">
+4
+</div>
+
+<div>
+
+<h3>
+Generas ventas reales
+</h3>
+
+<p>
+Convierte conexiones en ingresos dentro de una red de confianza.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta nex-section">
+
+<div class="container nex-container">
+
+<div class="cta-box">
+
+<h2>
+Haz crecer tu negocio hoy
+</h2>
+
+<p>
+Forma parte de una red privada diseñada para generar oportunidades reales.
+</p>
+
+<a href="incorporar-negocio.html">
+
+Quiero formar parte
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+© 2026 neXsv |
+
+<a href="terminos.html">
+Términos
+</a>
+
+</footer>
+
+</body>
+</html>

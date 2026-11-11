@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisar solicitud | neXsv</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/admin-solicitudes.css">
+    <link rel="stylesheet" href="css/admin-revision.css">
+</head>
+<body>
+    <header class="admin-topbar">
+        <a href="index.html" class="admin-brand"><img src="logo.png" alt="neXsv"></a>
+        <div><span class="admin-label">ADMINISTRACIÓN</span><strong>Revisión de solicitud</strong></div>
+    </header>
+
+    <main class="admin-container">
+        <a href="admin-solicitudes.html" class="back-link">← Volver a solicitudes</a>
+        <section id="adminMessage" class="admin-message" hidden></section>
+
+        <section id="requestContent" hidden>
+            <div class="admin-intro revision-intro">
+                <div>
+                    <span id="requestStatus" class="status pending">Pendiente</span>
+                    <h1 id="businessName">—</h1>
+                    <p id="businessCategory">—</p>
+                </div>
+            </div>
+
+            <section class="revision-grid">
+                <article class="revision-card">
+                    <h2>Información del negocio</h2>
+                    <div class="detail-grid">
+                        <div><span>Descripción</span><strong id="description">—</strong></div>
+                        <div><span>Qué ofrece</span><strong id="offer">—</strong></div>
+                        <div><span>Etapa del negocio</span><strong id="stage">—</strong></div>
+                        <div><span>Departamento</span><strong id="department">—</strong></div>
+                        <div><span>Municipio</span><strong id="municipality">—</strong></div>
+                    </div>
+                </article>
+
+                <article class="revision-card">
+                    <h2>Contacto y presencia</h2>
+                    <div class="detail-grid">
+                        <div><span>WhatsApp</span><strong id="whatsapp">—</strong></div>
+                        <div><span>Correo</span><strong id="email">—</strong></div>
+                        <div><span>Sitio web</span><strong id="website">—</strong></div>
+                        <div><span>Google Maps</span><strong id="maps">—</strong></div>
+                        <div><span>Instagram</span><strong id="instagram">—</strong></div>
+                        <div><span>Facebook</span><strong id="facebook">—</strong></div>
+                        <div><span>TikTok</span><strong id="tiktok">—</strong></div>
+                        <div><span>Otra red social</span><strong id="otherSocial">—</strong></div>
+                    </div>
+                </article>
+
+                <article class="revision-card">
+                    <h2>Información de la comunidad</h2>
+                    <div class="detail-grid">
+                        <div><span>Colegio(s)</span><strong id="schools">—</strong></div>
+                        <div><span>Otro colegio</span><strong id="otherSchool">—</strong></div>
+                        <div><span>Objetivos</span><strong id="goals">—</strong></div>
+                        <div><span>Otro objetivo</span><strong id="otherGoal">—</strong></div>
+                        <div><span>Recibir oportunidades</span><strong id="receiveOpportunities">—</strong></div>
+                    </div>
+                </article>
+
+                <article class="revision-card">
+                    <h2>Logotipo</h2>
+                    <div class="logo-review">
+                        <div id="logoEmpty" class="logo-empty">Sin logotipo</div>
+                        <img id="businessLogo" class="business-logo" src="" alt="Logotipo del negocio" hidden>
+                    </div>
+                </article>
+
+                <article class="revision-card">
+                    <h2>Solicitud</h2>
+                    <div class="detail-grid">
+                        <div><span>Fecha de solicitud</span><strong id="createdAt">—</strong></div>
+                        <div><span>Última observación</span><strong id="observations">—</strong></div>
+                    </div>
+                </article>
+
+                <article class="revision-card payment-card" id="paymentSection" hidden>
+                    <h2>Pago de incorporación</h2>
+
+                    <div id="manualPaymentFormWrapper" class="manual-payment-wrapper" hidden>
+                        <p class="payment-intro">La solicitud fue aprobada. Registra el pago que recibiste antes de verificarlo y activar el negocio.</p>
+                        <form id="manualPaymentForm" class="manual-payment-form">
+                            <div class="detail-grid">
+                                <div>
+                                    <label for="paymentMethodInput">Método de pago *</label>
+                                    <select id="paymentMethodInput" required>
+                                        <option value="TRANSFERENCIA">Transferencia</option>
+                                        <option value="EFECTIVO">Efectivo</option>
+                                        <option value="OTRO">Otro</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="paymentAmountInput">Monto *</label>
+                                    <input id="paymentAmountInput" type="number" min="0.01" step="0.01" value="50.00" required>
+                                </div>
+                                <div>
+                                    <label for="paymentReferenceInput">Referencia</label>
+                                    <input id="paymentReferenceInput" type="text" maxlength="150" placeholder="Ej. número de transferencia">
+                                </div>
+                                <div>
+                                    <label for="paymentDateInput">Fecha del pago *</label>
+                                    <input id="paymentDateInput" type="date" required>
+                                </div>
+                                <div class="payment-field-full">
+                                    <label for="paymentNotesInput">Observaciones</label>
+                                    <textarea id="paymentNotesInput" rows="3" maxlength="500" placeholder="Ej. Pago recibido por transferencia y comprobado en la cuenta bancaria."></textarea>
+                                </div>
+                            </div>
+                            <div class="payment-form-actions">
+                                <button type="submit" id="btnRegisterPayment" class="admin-btn success">Registrar pago</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="paymentDetails" hidden>
+                        <div class="detail-grid">
+                            <div><span>Estado del pago</span><strong id="paymentStatus">—</strong></div>
+                            <div><span>Monto</span><strong id="paymentAmount">—</strong></div>
+                            <div><span>Método</span><strong id="paymentMethod">—</strong></div>
+                            <div><span>Referencia</span><strong id="paymentReference">—</strong></div>
+                            <div><span>Fecha de pago</span><strong id="paymentPaidAt">—</strong></div>
+                            <div><span>Proveedor</span><strong id="paymentProvider">—</strong></div>
+                        </div>
+                        <div class="payment-action" id="paymentAction" hidden>
+                            <p>El pago está registrado y pendiente de verificación.</p>
+                            <button type="button" id="btnVerifyAndActivate" class="admin-btn success">Verificar pago y activar negocio</button>
+                        </div>
+                        <div class="payment-active" id="paymentActive" hidden>
+                            <p class="payment-success">✓ Pago verificado y negocio activo.</p>
+                            <div class="detail-grid">
+                                <div><span>Activado</span><strong id="activationDate">—</strong></div>
+                                <div><span>Vigencia hasta</span><strong id="expirationDate">—</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="revision-actions" id="reviewActions">
+                <h2>Decisión de revisión</h2>
+                <p>Si la información necesita cambios, solicita una corrección. Si está completa, aprueba la revisión para habilitar la siguiente etapa del proceso.</p>
+                <div class="action-buttons">
+                    <button type="button" id="btnCorrection" class="admin-btn warning">Solicitar corrección</button>
+                    <button type="button" id="btnApproveReview" class="admin-btn success">Aprobar revisión</button>
+                </div>
+            </section>
+
+            <section class="correction-panel" id="correctionPanel" hidden>
+                <h2>Solicitar corrección</h2>
+                <label for="correctionObservation">¿Qué debe corregir el negocio?</label>
+                <textarea id="correctionObservation" rows="5" maxlength="1000" placeholder="Ejemplo: Por favor, carga nuevamente el logotipo y corrige el enlace de Google Maps."></textarea>
+                <div class="correction-actions">
+                    <button type="button" id="btnCancelCorrection" class="admin-btn secondary">Cancelar</button>
+                    <button type="button" id="btnSendCorrection" class="admin-btn warning">Enviar solicitud de corrección</button>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/pages/admin-revisar.js"></script>
+    <script type="module" src="js/pages/admin-pago-manual.js"></script>
+</body>
+</html>
